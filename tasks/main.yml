@@ -1,0 +1,9 @@
+- name: insall EPEL 6.8 repository
+  shell: /bin/rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm creates=/etc/yum.repos.d/epel.repo
+  tags: epel
+
+- name: enable EPEL repo
+  ini_file: dest=/etc/yum.repos.d/epel.repo
+            section=epel
+            option=enabled
+            value=1
